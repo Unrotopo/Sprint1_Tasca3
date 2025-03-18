@@ -10,13 +10,9 @@ public class Main {
 
         Set<Restaurant> restaurantSet = new HashSet<>();
 
-        Restaurant restaurant1 = new Restaurant("CalPepe", 3);
-        Restaurant restaurant2 = new Restaurant("CalPepe", 4);
-        Restaurant restaurant3 = new Restaurant("CalPepe", 3);
-
-        restaurantSet.add(restaurant1);
-        restaurantSet.add(restaurant2);
-        restaurantSet.add(restaurant3);
+        restaurantSet.add(new Restaurant("CalPepe", 3));
+        restaurantSet.add(new Restaurant("CalPepe", 4));
+        restaurantSet.add(new Restaurant("CalPepe", 3));
 
         for (Restaurant restaurant : restaurantSet) {
             System.out.println(restaurant);
