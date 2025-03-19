@@ -2,8 +2,8 @@ package Nivell3.Exercici1.utils;
 
 import java.util.Scanner;
 
+import static Nivell3.Exercici1.utils.CSVManager.CSVToList;
 import static Nivell3.Exercici1.utils.CSVManager.filePathCsv;
-import static Nivell3.Exercici1.utils.CSVManager.readLine;
 import static Nivell3.Exercici1.utils.PersonManager.addPerson;
 import static Nivell3.Exercici1.utils.PersonManager.reconstructPersons;
 import static Nivell3.Exercici1.utils.SetManager.*;
@@ -34,22 +34,22 @@ public class Menu {
                     addPerson();
                     break;
                 case 2:
-                    setToString(getSetNameAscending(reconstructPersons(readLine(filePathCsv))));
+                    setToString(getSetNameAscending(reconstructPersons(CSVToList(filePathCsv))));
                     break;
                 case 3:
-                    setToString(getSetNameDescending(reconstructPersons(readLine(filePathCsv))));
+                    setToString(getSetNameDescending(reconstructPersons(CSVToList(filePathCsv))));
                     break;
                 case 4:
-                    setToString(getSetSurnameAscending(reconstructPersons(readLine(filePathCsv))));
+                    setToString(getSetSurnameAscending(reconstructPersons(CSVToList(filePathCsv))));
                     break;
                 case 5:
-                    setToString(getSetSurnameDescending(reconstructPersons(readLine(filePathCsv))));
+                    setToString(getSetSurnameDescending(reconstructPersons(CSVToList(filePathCsv))));
                     break;
                 case 6:
-                    setToString(getSetIdAscending(reconstructPersons(readLine(filePathCsv))));
+                    setToString(getSetIdAscending(reconstructPersons(CSVToList(filePathCsv))));
                     break;
                 case 7:
-                    setToString(getSetIdDescending(reconstructPersons(readLine(filePathCsv))));
+                    setToString(getSetIdDescending(reconstructPersons(CSVToList(filePathCsv))));
                     break;
             }
         } while (option != 0);

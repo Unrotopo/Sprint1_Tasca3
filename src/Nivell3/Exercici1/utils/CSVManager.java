@@ -18,7 +18,7 @@ public class CSVManager {
         }
     }
 
-    public static ArrayList<String[]> readLine(String filePathCsv) {
+    public static ArrayList<String[]> CSVToList(String filePathCsv) {
         ArrayList<String[]> listOfPersons = new ArrayList<>();
         String[] data = null;
         try {
