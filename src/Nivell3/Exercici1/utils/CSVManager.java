@@ -1,6 +1,7 @@
 package Nivell3.Exercici1.utils;
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class CSVManager {
 
@@ -17,7 +18,8 @@ public class CSVManager {
         }
     }
 
-    public static String[] readLine(String filePathCsv) {
+    public static ArrayList<String[]> readLine(String filePathCsv) {
+        ArrayList<String[]> listOfPersons = new ArrayList<>();
         String[] data = null;
         try {
             File file = new File(filePathCsv);
@@ -27,10 +29,11 @@ public class CSVManager {
 
             while ((line = br.readLine()) != null) {
                 data = line.split(",");
+                listOfPersons.add(data);
             }
         } catch (IOException e) {
             System.out.println("File not found");
         }
-        return data;
+        return listOfPersons;
     }
 }

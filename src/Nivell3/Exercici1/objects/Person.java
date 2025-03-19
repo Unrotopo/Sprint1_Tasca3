@@ -2,9 +2,9 @@ package Nivell3.Exercici1.objects;
 
 public class Person {
 
-    String name;
-    String surname;
-    String id;
+    private String name;
+    private String surname;
+    private String id;
 
     public Person(String surname, String name, String id) {
         this.name = name;
@@ -34,5 +34,10 @@ public class Person {
 
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    @Override
+    public String toString() {
+        return name + " " + surname + " " + id;
     }
 }
