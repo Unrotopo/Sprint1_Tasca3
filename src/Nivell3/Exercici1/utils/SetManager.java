@@ -11,49 +11,37 @@ public class SetManager {
 
     public static SortedSet<Person> getSetNameAscending(ArrayList<Person> persons) {
         SortedSet<Person> setNameAscending = new TreeSet<>(new PersonComparatorNameSurnameIdAscending());
-        for (Person person : persons) {
-            setNameAscending.add(person);
-        }
+        setNameAscending.addAll(persons);
         return setNameAscending;
     }
 
     public static SortedSet<Person> getSetNameDescending(ArrayList<Person> persons) {
         SortedSet<Person> setNameDescending = new TreeSet<>(new PersonComparatorNameSurnameIdDescending());
-        for (Person person : persons) {
-            setNameDescending.add(person);
-        }
+        setNameDescending.addAll(persons);
         return setNameDescending;
     }
 
     public static SortedSet<Person> getSetIdAscending(ArrayList<Person> persons) {
         SortedSet<Person> setIdAscending  = new TreeSet<>(new PersonComparatorIdSurnameNameAscending());
-        for (Person person : persons) {
-            setIdAscending.add(person);
-        }
+        setIdAscending.addAll(persons);
         return setIdAscending;
     }
 
     public static SortedSet<Person> getSetIdDescending(ArrayList<Person> persons) {
         SortedSet<Person> setIdDescending = new TreeSet<>(new PersonComparatorIdSurnameNameDescending());
-        for (Person person : persons) {
-            setIdDescending.add(person);
-        }
+        setIdDescending.addAll(persons);
         return setIdDescending;
     }
 
     public static SortedSet<Person> getSetSurnameAscending(ArrayList<Person> persons) {
         SortedSet<Person> setSurnameAscending = new TreeSet<>(new PersonComparatorSurnameNameIdAscending());
-        for (Person person : persons) {
-            setSurnameAscending.add(person);
-        }
+        setSurnameAscending.addAll(persons);
         return setSurnameAscending;
     }
 
     public static SortedSet<Person> getSetSurnameDescending(ArrayList<Person> persons) {
         SortedSet<Person> setSurnameDescending = new TreeSet<>(new PersonComparatorSurnameNameIdDescending());
-        for (Person person : persons) {
-            setSurnameDescending.add(person);
-        }
+        setSurnameDescending.addAll(persons);
         return setSurnameDescending;
     }
 
