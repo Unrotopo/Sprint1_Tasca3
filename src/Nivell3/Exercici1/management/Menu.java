@@ -1,12 +1,12 @@
-package Nivell3.Exercici1.utils;
+package Nivell3.Exercici1.management;
 
 import java.util.Scanner;
 
-import static Nivell3.Exercici1.utils.CSVManager.CSVToList;
-import static Nivell3.Exercici1.utils.CSVManager.filePathCsv;
-import static Nivell3.Exercici1.utils.PersonManager.addPerson;
-import static Nivell3.Exercici1.utils.PersonManager.reconstructPersons;
-import static Nivell3.Exercici1.utils.SetManager.*;
+import static Nivell3.Exercici1.management.CSVManager.CSVToList;
+import static Nivell3.Exercici1.management.CSVManager.filePathCsv;
+import static Nivell3.Exercici1.management.PersonManager.addPerson;
+import static Nivell3.Exercici1.management.PersonManager.reconstructPersons;
+import static Nivell3.Exercici1.management.SetManager.*;
 
 public class Menu {
 

@@ -1,4 +1,4 @@
-package Nivell3.Exercici1.utils;
+package Nivell3.Exercici1.management;
 
 import Nivell3.Exercici1.comparators.*;
 import Nivell3.Exercici1.objects.Person;

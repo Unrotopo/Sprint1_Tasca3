@@ -1,7 +1,7 @@
-package Nivell3.Exercici1.utils;
+package Nivell3.Exercici1.management;
 
 import Nivell3.Exercici1.objects.Person;
-import static Nivell3.Exercici1.utils.CSVManager.writeLine;
+import static Nivell3.Exercici1.management.CSVManager.writeLine;
 
 import java.util.*;
 
@@ -22,8 +22,8 @@ public class PersonManager {
 
     public static ArrayList<Person> reconstructPersons(ArrayList<String[]> listOfPersons) {
         ArrayList<Person> persons = new ArrayList<>();
-        for (int i = 0; i < listOfPersons.size(); i++) {
-            persons.add(new Person(listOfPersons.get(i)[0], listOfPersons.get(i)[1], listOfPersons.get(i)[2]));
+        for (String[] listOfPerson : listOfPersons) {
+            persons.add(new Person(listOfPerson[0], listOfPerson[1], listOfPerson[2]));
         }
         return persons;
     }
