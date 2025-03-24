@@ -10,7 +10,8 @@ public class Main {
 
         List<Integer> list1 = new ArrayList<>(List.of(arr1));
         List<Integer> list2 = new ArrayList<>(List.of(arr2));
-
+        Iterator<Integer> list2Iterator = list2.listIterator();
+        list2Iterator.next(); // USAR ITERATOR
         list2.addAll(list1.reversed());
 
         System.out.println(list2);

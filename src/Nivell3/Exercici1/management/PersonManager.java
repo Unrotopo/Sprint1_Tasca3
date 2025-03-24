@@ -17,7 +17,6 @@ public class PersonManager {
         String id = sc.next();
         Person person = new Person(surname, name, id);
         writeLine(person.getSurname(), person.getName(), person.getId());
-        System.out.println("Person added\n");
     }
 
     public static ArrayList<Person> reconstructPersons(ArrayList<String[]> listOfPersons) {
