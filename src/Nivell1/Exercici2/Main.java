@@ -5,16 +5,18 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
-        Integer[] arr1 = {1, 2, 3, 4, 5};
-        Integer[] arr2 = {6, 7, 8, 9, 10};
+        Integer[] arr1 = {1, 2, 3, 4, 5, 6, 7};
 
         List<Integer> list1 = new ArrayList<>(List.of(arr1));
-        List<Integer> list2 = new ArrayList<>(List.of(arr2));
-        Iterator<Integer> list2Iterator = list2.listIterator();
-        list2Iterator.next(); // USAR ITERATOR
-        list2.addAll(list1.reversed());
+        List<Integer> list2 = new ArrayList<>();
 
-        System.out.println(list2);
+        ListIterator<Integer> listIterator = list1.listIterator(list1.size());
+        while (listIterator.hasPrevious()) {
+            list2.add(listIterator.previous());
+        }
+
+        System.out.println("Lista 1: " + list1);
+        System.out.println("Lista 2: " + list2);
 
 
     }
