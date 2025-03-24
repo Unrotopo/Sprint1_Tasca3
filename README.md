@@ -74,15 +74,16 @@ Genis      Ciutat Vendrell     39718459N
 ## 🚀 Instal·lació i Execució
 
 1. **Clona el repositori:**
-   ```
+  
   https://github.com/Unrotopo/Sprint1_Tasca3.git
+
    ```
 
-2. **Obre el projecte en el teu IDE (Eclipse, IntelliJ).**
+3. **Obre el projecte en el teu IDE (Eclipse, IntelliJ).**
 
-3. **Compila i executa els programes.**
+4. **Compila i executa els programes.**
 
-4. **Si el projecte és Maven o Gradle, usa:**
+5. **Si el projecte és Maven o Gradle, usa:**
    ```sh
    mvn clean install
    # o
