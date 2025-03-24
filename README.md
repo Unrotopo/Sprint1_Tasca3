@@ -74,7 +74,7 @@ Genis      Ciutat Vendrell     39718459N
 ## 🚀 Instal·lació i Execució
 
 1. **Clona el repositori:**
-   ```sh
+   ```
   https://github.com/Unrotopo/Sprint1_Tasca3.git
    ```
 
