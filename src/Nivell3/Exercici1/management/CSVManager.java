@@ -7,7 +7,7 @@ public class CSVManager {
 
     public static String filePathCsv = "src\\Nivell3\\Exercici1\\resources\\people.csv";
 
-    public static void writeLine(String surname, String name, String id) {
+    public void writeLine(String surname, String name, String id) {
         try {
             FileWriter csv = new FileWriter(filePathCsv, true);
             csv.write(surname + "," + name + "," + id + "\n");
@@ -18,7 +18,7 @@ public class CSVManager {
         }
     }
 
-    public static ArrayList<String[]> CSVToList(String filePathCsv) {
+    public ArrayList<String[]> CSVToList(String filePathCsv) {
         ArrayList<String[]> listOfPersons = new ArrayList<>();
         String[] data = null;
         try {

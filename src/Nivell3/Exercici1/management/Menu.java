@@ -1,16 +1,18 @@
 package Nivell3.Exercici1.management;
 
+import Nivell3.Exercici1.objects.Person;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
-import static Nivell3.Exercici1.management.CSVManager.CSVToList;
-import static Nivell3.Exercici1.management.CSVManager.filePathCsv;
-import static Nivell3.Exercici1.management.PersonManager.addPerson;
-import static Nivell3.Exercici1.management.PersonManager.reconstructPersons;
 import static Nivell3.Exercici1.management.SetManager.*;
 
 public class Menu {
 
-    public static void menu() {
+    PersonManager personManager = new PersonManager();
+    CSVManager csvManager = new CSVManager();
+
+    public void menu() {
         int option;
         Scanner sc = new Scanner(System.in);
 
@@ -31,27 +33,31 @@ public class Menu {
 
             switch (option) {
                 case 1:
-                    addPerson();
+                    personManager.addPerson(csvManager);
                     break;
                 case 2:
-                    setToString(getSetNameAscending(reconstructPersons(CSVToList(filePathCsv))));
+                    setToString(getSetNameAscending(fromCSVToPersons()));
                     break;
                 case 3:
-                    setToString(getSetNameDescending(reconstructPersons(CSVToList(filePathCsv))));
+                    setToString(getSetNameDescending(fromCSVToPersons()));
                     break;
                 case 4:
-                    setToString(getSetSurnameAscending(reconstructPersons(CSVToList(filePathCsv))));
+                    setToString(getSetSurnameAscending(fromCSVToPersons()));
                     break;
                 case 5:
-                    setToString(getSetSurnameDescending(reconstructPersons(CSVToList(filePathCsv))));
+                    setToString(getSetSurnameDescending(fromCSVToPersons()));
                     break;
                 case 6:
-                    setToString(getSetIdAscending(reconstructPersons(CSVToList(filePathCsv))));
+                    setToString(getSetIdAscending(fromCSVToPersons()));
                     break;
                 case 7:
-                    setToString(getSetIdDescending(reconstructPersons(CSVToList(filePathCsv))));
+                    setToString(getSetIdDescending(fromCSVToPersons()));
                     break;
             }
         } while (option != 0);
+    }
+
+    public ArrayList<Person> fromCSVToPersons() {
+        return personManager.reconstructPersons(csvManager.CSVToList(CSVManager.filePathCsv));
     }
 }
