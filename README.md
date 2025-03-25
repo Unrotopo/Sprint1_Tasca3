@@ -1,106 +1,83 @@
-# Exercicis de Programació en Java
+# README
 
-## 📌 Nivell 1
-### Exercici 1
-- Crear una classe `Month` amb un atribut `name` que emmagatzema el nom del mes.
-- Afegir 11 objectes `Month` en un `ArrayList` (tots menys "Agost").
-- Inserir "Agost" en la posició correcta per mantenir l'ordre.
-- Convertir l'`ArrayList` a un `HashSet` i assegurar-se que no hi ha duplicats.
-- Recórrer la llista amb un **for** i amb un **iterador**.
-
-### Exercici 2
-- Crear i emplenar un `List<Integer>`.
-- Crear un segon `List<Integer>` i inserir els elements de la primera en ordre invers.
-- Utilitzar **ListIterator** per fer la inserció en ordre invers.
-
-### Exercici 3
-- Llegir el fitxer `countries.txt` (conté països i capitals).
-- Emmagatzemar les dades en un `HashMap<String, String>`.
-- Demanar el nom de l'usuari i mostrar països aleatoris.
-- L'usuari ha d'escriure la capital correcta.
-- Si encerta, suma un punt. El joc es repeteix 10 vegades.
-- Després de 10 intents, guardar el nom i la puntuació en `classificacio.txt`.
+## Descripció
+Aquest repositori conté una sèrie d'exercicis de programació en Java. 
 
 ---
 
-## 📌 Nivell 2
-### Exercici 1
-- Crear una classe `Restaurant` amb **nom** (`String`) i **puntuació** (`int`).
-- Implementar la lògica per evitar restaurants duplicats en un `HashSet`.
-- Pot haver-hi restaurants amb el mateix nom però puntuació diferent.
+## Exercicis
 
-### Exercici 2
-- Ordenar els objectes `Restaurant` per **nom** i per **puntuació** en ordre descendent.
+### Nivell 1
 
-**Exemple:**
-```
-Nom: restaurant1, Puntuació: 8
-Nom: restaurant1, Puntuació: 7
-```
+#### Exercici 1
+- Crea una classe anomenada `Month` amb un atribut `name` (nom del mes de l'any).
+- Afegeix 11 objectes `Month` en un `ArrayList`, excepte el mes d'Agost.
+- Insereix el mes d'Agost en la posició correcta i assegura't que la llista manté l'ordre.
+- Converteix la `ArrayList` en un `HashSet` i comprova que no permet duplicats.
+- Recorre la llista amb un bucle `for` i amb un `Iterator`.
+
+#### Exercici 2
+- Crea i emplena un `List<Integer>`.
+- Crea un segon `List<Integer>` i insereix-hi els elements de la primera llista en ordre invers.
+- Utilitza `ListIterator` per llegir els elements de la primera llista i inserir-los a la segona.
+
+#### Exercici 3
+- Llegeix el fitxer `countries.txt`, que conté països i capitals, i desa les dades en un `HashMap<String, String>`.
+- El programa ha de demanar el nom de l'usuari i mostrar un país de manera aleatòria.
+- L'usuari ha d'introduir la capital corresponent. Si l'encerta, suma un punt.
+- Repeteix aquest procés 10 vegades.
+- Desa la classificació en un fitxer anomenat `classificacio.txt` amb el nom de l'usuari i la seva puntuació.
 
 ---
 
-## 📌 Nivell 3
-### Exercici 1
-- Llegir un fitxer **CSV** amb **nom, cognom i DNI**.
-- Ordenar les persones per **nom, cognom o DNI**.
-- Implementar un **menú interactiu**:
+### Nivell 2
 
-```
-1.- Introduir persona.
-2.- Mostrar les persones ordenades per nom (A-Z).
-3.- Mostrar les persones ordenades per nom (Z-A).
-4.- Mostrar les persones ordenades per cognoms (A-Z).
-5.- Mostrar les persones ordenades per cognoms (Z-A).
-6.- Mostrar les persones ordenades per DNI (1-9).
-7.- Mostrar les persones ordenades per DNI (9-1).
-0.- Sortir.
-```
+#### Exercici 1
+- Crea una classe `Restaurant` amb els atributs `name` (String) i `rating` (int).
+- Implementa els mètodes necessaris perquè no es puguin introduir objectes `Restaurant` amb el mateix nom i puntuació en un `HashSet`.
+- És possible tenir restaurants amb el mateix nom però amb diferents puntuacions.
 
-- Format de sortida:
+#### Exercici 2
+- Modifica la classe `Restaurant` perquè els objectes es puguin ordenar per nom i per puntuació en ordre descendent.
+
+> **Exemple de sortida:**
+>
+> nom: restaurant1, puntuació: 8
+>
+> nom: restaurant1, puntuació: 7
+
+---
+
+### Nivell 3
+
+#### Exercici 1
+- Desenvolupa una aplicació per llegir un fitxer CSV que conté tres camps: `name`, `surname` i `DNI`.
+- Ordena les persones llegides per nom, cognom o DNI utilitzant la col·lecció més adient.
+
+##### Classe `Persona`
+- `name` (String)
+- `surname` (String)
+- `DNI` (String)
+
+##### Menú de l'aplicació
+1. Introduir persona.
+2. Mostrar les persones ordenades per nom (A-Z).
+3. Mostrar les persones ordenades per nom (Z-A).
+4. Mostrar les persones ordenades per cognoms (A-Z).
+5. Mostrar les persones ordenades per cognoms (Z-A).
+6. Mostrar les persones ordenades per DNI (1-9).
+7. Mostrar les persones ordenades per DNI (9-1).
+0. Sortir.
+
+##### Exemple de sortida
 ```
 ___Nom___ ____Cognoms___ __NIF__
-Andreu     Ballestero Llenas   34835767J
-Miquel     Bayona Font         48743957B
-Guillem    Capdevila Riu      33957834J
-Albert     Carbonell Ferrer    77364986R
-Ferran     Casas Coderch      23047848P
-Maria      Casellas Fuste      47102244S
-Genis      Ciutat Vendrell     39718459N
+Andreu          Ballestero Llenas  34835767J
+Miquel          Bayona Font        48743957B
+Guillem         Capdevila Riu      33957834J
+Albert          Carbonell Ferrer   77364986R
+Ferran          Casas Coderch      23047848P
+Maria           Casellas Fuste     47102244S
+Genis           Ciutat Vendrell    39718459N
 ```
-
----
-
-## 🚀 Instal·lació i Execució
-
-1. **Clona el repositori:**
-   ```sh
-  https://github.com/Unrotopo/Sprint1_Tasca3.git
-   ```
-
-2. **Obre el projecte en el teu IDE (Eclipse, IntelliJ).**
-
-3. **Compila i executa els programes.**
-
-4. **Si el projecte és Maven o Gradle, usa:**
-   ```sh
-   mvn clean install
-   # o
-   gradle build
-   ```
-
----
-
-## 📜 Llicència
-Aquest projecte es distribueix sota la llicència MIT. Consulta el fitxer `LICENSE` per més detalls.
-
----
-
-## 📝 Autor
-Aquest repositori ha estat creat per Luis Portas Montero.
-
----
-
-## 🌟 Contribució
-Si vols contribuir, fes un **fork** del repositori i envia un **pull request** amb les teves millores. Gràcies! 😃
 
