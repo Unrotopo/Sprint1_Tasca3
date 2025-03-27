@@ -20,7 +20,7 @@ public class CSVManager {
 
     public ArrayList<String[]> CSVToList(String filePathCsv) {
         ArrayList<String[]> listOfPersons = new ArrayList<>();
-        String[] data = null;
+        String[] data;
         try {
             File file = new File(filePathCsv);
             FileReader csv = new FileReader(file);

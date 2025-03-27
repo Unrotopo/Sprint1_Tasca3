@@ -13,7 +13,7 @@ public class PersonManager {
         System.out.println("Enter person surname: ");
         String surname = sc.nextLine();
         System.out.println("Enter person id: ");
-        String id = sc.next();
+        String id = sc.nextLine();
         Person person = new Person(surname, name, id);
         csvManager.writeLine(person.getSurname(), person.getName(), person.getId());
     }
