@@ -5,12 +5,11 @@ import Nivell3.Exercici1V2.objects.Person;
 
 import java.util.*;
 
-import static Nivell3.Exercici1V2.management.SetManager.*;
-
 public class Menu {
 
     PersonManager personManager = new PersonManager();
     CSVManager csvManager = new CSVManager();
+    SetManager setManager = new SetManager();
 
     public void menu() {
         int option;
@@ -36,22 +35,22 @@ public class Menu {
                     personManager.addPerson(csvManager);
                     break;
                 case 2:
-                    setToString(SetManager.sortedSet(fromCSVToPersons(), PersonComparator.NAME));
+                    setManager.setToString(setManager.sortedSet(fromCSVToPersons(), PersonComparator.NAME));
                     break;
                 case 3:
-                    setToString(SetManager.reversedSortedSet(fromCSVToPersons(), PersonComparator.NAME));
+                    setManager.setToString(setManager.reversedSortedSet(fromCSVToPersons(), PersonComparator.NAME));
                     break;
                 case 4:
-                    setToString(SetManager.sortedSet(fromCSVToPersons(), PersonComparator.SURNAME));
+                    setManager.setToString(setManager.sortedSet(fromCSVToPersons(), PersonComparator.SURNAME));
                     break;
                 case 5:
-                    setToString(SetManager.reversedSortedSet(fromCSVToPersons(), PersonComparator.SURNAME));
+                    setManager.setToString(setManager.reversedSortedSet(fromCSVToPersons(), PersonComparator.SURNAME));
                     break;
                 case 6:
-                    setToString(SetManager.sortedSet(fromCSVToPersons(), PersonComparator.ID));
+                    setManager.setToString(setManager.sortedSet(fromCSVToPersons(), PersonComparator.ID));
                     break;
                 case 7:
-                    setToString(SetManager.reversedSortedSet(fromCSVToPersons(), PersonComparator.ID));
+                    setManager.setToString(setManager.reversedSortedSet(fromCSVToPersons(), PersonComparator.ID));
                     break;
             }
         } while (option != 0);
