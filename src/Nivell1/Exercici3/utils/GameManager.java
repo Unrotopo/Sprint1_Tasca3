@@ -12,7 +12,7 @@ public class GameManager {
 
     public GameManager(FileManager fileManager) {
         this.fileManager = fileManager;
-        this.countriesMap = fileManager.fileToMap();
+        this.countriesMap = fileManager.getGameData();
         start();
     }
 
@@ -25,36 +25,46 @@ public class GameManager {
     }
 
     public void start() {
+        askPlayerName();
+        for (int i = 0; i < 10; i++) {
+            askQuestion();
+        }
+        endGame();
+    }
+
+    public void askPlayerName() {
         System.out.println("Enter player name:");
         playerName = sc.nextLine();
+    }
 
-        for (int i = 0; i < 10; i++) {
-            Map.Entry<String, String> country = getCountry();
-            System.out.println("What is the capital of " + country.getKey() + "?");
-            String answer = sc.nextLine();
+    public void askQuestion() {
+        Map.Entry<String, String> country = getCountry();
+        System.out.println("What is the capital of " + country.getKey() + "?");
+        String answer = sc.nextLine();
 
-            if (answer.equals(country.getValue())) {
-                score++;
-                System.out.println("Correct!");
-            } else {
-                System.out.println("Wrong!");
-            }
+        if (answer.equals(country.getValue())) {
+            score++;
+            System.out.println("Correct!");
+        } else {
+            System.out.println("Wrong!");
         }
+    }
 
+    public void endGame() {
         assert fileManager != null;
-        fileManager.scoreToFile(getScore(), playerName);
+        fileManager.saveScores(getScore(), playerName);
         System.out.println("Game over!\nTotal score: " + score + "\nYour score has been saved!");
     }
 
     public Map.Entry<String, String> getCountry() {
-        try {
-            List<Map.Entry<String, String>> entries = new ArrayList<>(countriesMap.entrySet());
-            Random random = new Random();
+        List<Map.Entry<String, String>> entries = new ArrayList<>(countriesMap.entrySet());
 
-            return entries.get(random.nextInt(entries.size()));
+        if (entries.isEmpty()) {
+            System.out.println("No countries found!");
+            return null;
+        }
 
-        } catch (IndexOutOfBoundsException e) {
-            System.out.println(e.getMessage());
-        } return null;
+        Random random = new Random();
+        return entries.get(random.nextInt(entries.size()));
     }
 }

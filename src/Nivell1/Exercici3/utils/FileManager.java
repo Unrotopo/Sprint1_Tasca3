@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class FileManager {
 
-    private final String filePath; // se quita static y queda final
+    private final String filePath;
     private final HashMap<String, String> countriesCapitals = new HashMap<>();
 
     public FileManager(String filePath) {
@@ -21,17 +21,13 @@ public class FileManager {
         return this.filePath;
     }
 
-    public Map<String, String> fileToMap() {
-        try {
-            File countriesFile = new File(getFilePath() + "countries.txt");
-            Scanner countriesReader = new Scanner(countriesFile);
-
-            while (countriesReader.hasNextLine()) {
-                String country = countriesReader.nextLine().trim();
+    public Map<String, String> getGameData() {
+        try (Scanner scanner = new Scanner(new File(filePath + "countries.txt"))) {
+            while (scanner.hasNextLine()) {
+                String country = scanner.nextLine().trim();
                 if (country.isEmpty()) continue;
                 countriesCapitals.put(country.split(" ")[0], country.split(" ")[1]);
             }
-            countriesReader.close();
 
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
@@ -39,13 +35,11 @@ public class FileManager {
         return countriesCapitals;
     }
 
-    public void scoreToFile(int score, String playerName) {
-        try{
-            FileWriter scoreFile = new FileWriter(getFilePath() + "classification.txt", true);
+    public void saveScores(int score, String playerName) {
+        try (FileWriter scoreFile = new FileWriter(filePath + "classification.txt", true)) {
             scoreFile.write(playerName + ": ");
             scoreFile.write(score + " Points");
             scoreFile.write("\n");
-            scoreFile.close();
 
         } catch (IOException e) {
             System.out.println(e.getMessage());
