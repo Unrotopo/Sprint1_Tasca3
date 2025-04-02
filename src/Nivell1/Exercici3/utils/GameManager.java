@@ -60,8 +60,7 @@ public class GameManager {
         List<Map.Entry<String, String>> entries = new ArrayList<>(countriesMap.entrySet());
 
         if (entries.isEmpty()) {
-            System.out.println("No countries found!");
-            return null;
+            throw new IllegalStateException("No country found");
         }
 
         Random random = new Random();
